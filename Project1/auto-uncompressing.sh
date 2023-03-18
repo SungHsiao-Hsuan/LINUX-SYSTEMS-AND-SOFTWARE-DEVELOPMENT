@@ -1,7 +1,7 @@
 #!/bin/bash
 # Program:
 #	This program is used to check which students have handed in their homework and output those who haven't handed it in or have handed in the wrong type of archive.
-# History: 
+# History:
 # 2023/03/17
 # Author: Sung Hsiao-Hsuan
 
@@ -10,10 +10,10 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
 #unzip Linux_Week5_Lab.zip
 
-targetFile="/home/maomao/Downloads/Linux_Week5_Lab"
+targetFile="/app/Linux_Week5_Lab"
 
 for file in "${targetFile}/compressed_files/"*;
-do 
+do
 	namefile=${file%%.*}
 	echo "${namefile##*/}" >> "${targetFile}/handInID.txt"
 done
@@ -33,7 +33,7 @@ do
         namefile=${f%%.*}
         echo "${namefile##*/}" >> "${targetFile}/wrong_list"
 done
-	
+
 
 for r in ${targetFile}/compressed_files/rar/*; do
 	unrar e ${r} ${targetFile}/compressed_files/rar/
@@ -47,4 +47,4 @@ for t in ${targetFile}/compressed_files/tar.gz/*; do
 	tar -xf ${t} -C ${targetFile}/compressed_files/tar.gz/
 done
 
-rm ${targetFile}/compressed_files handInID.txt
+rm ${targetFile}/handInID.txt
