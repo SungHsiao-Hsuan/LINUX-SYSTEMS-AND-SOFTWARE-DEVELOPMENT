@@ -3,6 +3,7 @@
 #	This program is used to check which students have handed in their homework and output those who haven't handed it in or have handed in the wrong type of archive.
 # History: 
 # 2023/03/17
+# Author: Sung Hsiao-Hsuan
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
